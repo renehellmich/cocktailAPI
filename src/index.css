@@ -1,0 +1,26 @@
+@font-face {
+    font-family: "Montserrat";
+    src: url("../src/assets/fonts/Montserrat/Montserrat-VariableFont_wght.ttf");
+}
+
+@font-face {
+    font-family: "PlayfairDisplay";
+    src: url("../src/assets/fonts/Playfair_Display/PlayfairDisplay-VariableFont_wght.ttf");
+
+}
+
+:root {
+    /* global fonts */
+    --font-main: "Montserrat";
+    --font-secondary: "PlayfairDisplay";
+
+    /* global colors */
+    --color-accent: #262B46;
+    --color-light: #fff;
+    --color01: #6FC3DF;
+    --color02: #8D82C4;
+    --color03: #EC8D81;
+    --color04: #E7B788;
+    --color05: #8EA9E8;
+    --color06: #87C5A4;
+}
