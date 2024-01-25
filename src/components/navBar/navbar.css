@@ -1,0 +1,21 @@
+.navContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--color-accent);
+    padding: .5rem 1rem;
+}
+
+.logo {
+    font-family: var(--font-secondary);
+    font-size: 1.5rem;
+    color: var(--color-light);
+}
+
+nav {
+    color: var(--color-light);
+    font-family: var(--font-main);
+    text-decoration: none;
+    text-transform: uppercase;
+}

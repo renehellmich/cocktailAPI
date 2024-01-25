@@ -1,11 +1,35 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+@font-face {
+    font-family: "Montserrat";
+    src: url("../src/assets/fonts/Montserrat/Montserrat-VariableFont_wght.ttf");
 }
 
-#root {
-  --color-blue-light: rgba(140, 194, 221, 1);
+@font-face {
+    font-family: "PlayfairDisplay";
+    src: url("../src/assets/fonts/Playfair_Display/PlayfairDisplay-VariableFont_wght.ttf");
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }    
+}
+
+:root {
+    /* global fonts */
+    --font-main: "Montserrat";
+    --font-secondary: "PlayfairDisplay";
+
+    /* global colors */
+    --color-accent: #262B46;
+    --color-light: #fff;
+    --color01: #6FC3DF;
+    --color02: #8D82C4;
+    --color03: #EC8D81;
+    --color04: #E7B788;
+    --color05: #8EA9E8;
+    --color06: #87C5A4;
+
+    --color-blue-light: rgba(140, 194, 221, 1);
   --color-purple: rgba(137, 129, 192, 1);
   --color-red: rgba(213, 129, 129, 1);
   --color-yellow: rgba(217, 182, 137, 1);
@@ -13,3 +37,13 @@
   --color-green: rgba(155, 195, 164, 1);
   --color-blue-dark: rgba(44, 47, 71, 1)
 }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-secondary);
+}
+
