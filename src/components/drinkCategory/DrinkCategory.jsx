@@ -4,6 +4,8 @@ import { mainContext } from '../../context/mainProvider'
 import Cocktail from '../cocktail/Cocktail'
 import Header from '../header/Header'
 import './drinkcategory.css'
+import NavBar from '../navBar/NavBar'
+import Footer from '../footer/Footer'
 
 
 const DrinkCategory = () => {
@@ -25,7 +27,11 @@ const DrinkCategory = () => {
 
     return (
         <>
-            <Header />
+            <header>
+                <NavBar />
+                <Header />
+            </header>
+           
             <main>
                 {data.map((cocktail, index) => {
                     return (
@@ -38,6 +44,9 @@ const DrinkCategory = () => {
                 })
                 }
             </main>
+            <footer>
+                <Footer />
+            </footer>
         </>
     )
 }
