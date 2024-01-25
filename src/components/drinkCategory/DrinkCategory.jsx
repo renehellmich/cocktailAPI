@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import { mainContext } from '../../context/mainProvider'
 import Cocktail from '../cocktail/Cocktail'
@@ -12,18 +12,16 @@ const DrinkCategory = () => {
 
     const { category } = useParams()
 
-    const { setDrink, data } = useContext(mainContext)
+    // const { setDrink, data } = useContext(mainContext)
+    const { state, setState } = useContext(mainContext)
 
-    // const sendApi = async () => {
-    //     if(category === 'random') {
-    //         await setApi('https:www.thecocktaildb.com/api/json/v1/1/random.php')
-    //     } else {
-    //         await setApi(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${category}`)
-    //     }
-    // }
-    setDrink(category)
-
-    // console.log(api);
+    console.log(category);
+    useEffect(() => {
+        setState((prevState) => ({
+            ...prevState,
+            drink: category
+        }))
+    }, [category, setState])
 
     return (
         <>
@@ -33,27 +31,35 @@ const DrinkCategory = () => {
             </header>
 
             <main>
-                {data.map((cocktail, index) => {
-                    let colorClass
-                    index % 6 == 0
-                        ? (colorClass = 'sixed')
-                        : index % 5 == 0
-                            ? (colorClass = 'fifth')
-                            : index % 4 == 0
-                                ? (colorClass = 'fourth')
-                                : index % 3 == 0
-                                    ? (colorClass = 'third')
-                                    : index % 2 == 0
-                                        ? (colorClass = 'second')
-                                        : (colorClass = 'first')
-                    return (
-                        <div key={index} className={`divCocktail ${colorClass}`}>
-                            <Cocktail
-                                cocktailData={cocktail}
-                            />
-                        </div>
+                {
+                    state.data ?
+                    (
+                        <>
+                        {state.data.map((cocktail, index) => {
+                            let colorClass
+                            index % 6 == 0
+                                ? (colorClass = 'sixed')
+                                : index % 5 == 0
+                                    ? (colorClass = 'fifth')
+                                    : index % 4 == 0
+                                        ? (colorClass = 'fourth')
+                                        : index % 3 == 0
+                                            ? (colorClass = 'third')
+                                            : index % 2 == 0
+                                                ? (colorClass = 'second')
+                                                : (colorClass = 'first')
+                            return (
+                                <div key={index} className={`divCocktail ${colorClass}`}>
+                                    <Cocktail
+                                        cocktailData={cocktail}
+                                    />
+                                </div>
+                            )
+                        })
+                        }
+                        </>
                     )
-                })
+                    :(<p>Loading....</p>)
                 }
             </main>
             <footer>
