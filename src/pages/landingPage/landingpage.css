@@ -1,16 +1,17 @@
+/*  dass musst gelöscht werden habe ich in der component css eingefügt 
 header {
     background: var(--color-accent);
     color: white;
     position: relative
-}
+} */
 
 main {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
 }
 
-footer {
+/*  dass muss auch gelöscht werden habe ich in der component css eingefügt {
     background: var(--color-accent);
     color: white;
     padding: 3rem 2rem;
-}
+} */

@@ -4,14 +4,16 @@ import { mainContext } from '../../context/mainProvider'
 import Cocktail from '../cocktail/Cocktail'
 import Header from '../header/Header'
 import './drinkcategory.css'
+import NavBar from '../navBar/NavBar'
+import Footer from '../footer/Footer'
 
 
 const DrinkCategory = () => {
 
     const { category } = useParams()
 
-    const { setDrink, data} = useContext(mainContext)
-    
+    const { setDrink, data } = useContext(mainContext)
+
     // const sendApi = async () => {
     //     if(category === 'random') {
     //         await setApi('https:www.thecocktaildb.com/api/json/v1/1/random.php')
@@ -25,7 +27,11 @@ const DrinkCategory = () => {
 
     return (
         <>
-            <Header />
+            {/* hier habe ich navbarcomponente hinzugefügt und header tag*/}
+            <header>
+                <NavBar />
+                <Header />
+            </header>
             <main>
                 {data.map((cocktail, index) => {
                     return (
@@ -38,6 +44,8 @@ const DrinkCategory = () => {
                 })
                 }
             </main>
+            {/* hier habe ich footer componente hizugefügt */}
+            <Footer />
         </>
     )
 }
