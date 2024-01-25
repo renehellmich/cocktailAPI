@@ -4,8 +4,6 @@ import './landingpage.css'
 
 const LandingPage = () => {
 
-    <p>, sit amet .   !</p>
-
   return (
     <>
         <main>

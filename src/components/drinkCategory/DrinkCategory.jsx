@@ -1,14 +1,14 @@
 import React from 'react'
 
 
-const DrinkCategory = ({}) => {
+const DrinkCategory = ({ }) => {
 
-    
-  return (
-    <>
-        
-    </>
-  )
+
+    return (
+        <>
+
+        </>
+    )
 }
 
 export default DrinkCategory
