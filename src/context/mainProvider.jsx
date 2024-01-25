@@ -28,7 +28,6 @@ const MainProvider = ({ children }) => {
                 ...prevState,
                 api: 'https://www.thecocktaildb.com/api/json/v1/1/random.php'
             }))
-            // setApi('https:www.thecocktaildb.com/api/json/v1/1/random.php')
         } else {
             console.log('Drink:', state.drink);
             setState((prevState) => ({
@@ -36,7 +35,6 @@ const MainProvider = ({ children }) => {
                 api: `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${state.drink}`
             }))
             console.log('API', state.api);
-            // setApi(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${drink}`)
         }
 
         const apiFetch = async () => {
@@ -47,7 +45,6 @@ const MainProvider = ({ children }) => {
                 ...prevState,
                 data: resp.data.drinks
             }))
-            // setData(resp.data.drinks)
         }
         apiFetch()
         console.log('State im useEffect', state);
@@ -61,7 +58,6 @@ const MainProvider = ({ children }) => {
                 ...prevState,
                 api: `https://www.thecocktaildb.com/api/json/v1/1/search.php?f=${state.searchValue}`
             }))
-            // setApi(`https://www.thecocktaildb.com/api/json/v1/1/search.php?f=${searchValue}`)
 
             const apiFetch = async () => {
                 const resp = await axios.get(state.api)
@@ -69,7 +65,6 @@ const MainProvider = ({ children }) => {
                     ...prevState,
                     data: resp.data.drinks
                 }))
-                // setData(resp.data.drinks)
             }
             apiFetch()
         }, [state.searchValue])
@@ -78,7 +73,6 @@ const MainProvider = ({ children }) => {
     console.log('State: ', state);
     return (
         <>
-            {/* value={{ drink, setDrink, data, setData, api, setApi, searchValue, setSearchValue }} */}
             <mainContext.Provider value={{ state, setState }}>
                 {children}
             </mainContext.Provider>

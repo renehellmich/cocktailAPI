@@ -11,8 +11,6 @@ import Footer from '../footer/Footer'
 const DrinkCategory = () => {
 
     const { category } = useParams()
-
-    // const { setDrink, data } = useContext(mainContext)
     const { state, setState } = useContext(mainContext)
 
     console.log(category);
