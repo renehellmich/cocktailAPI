@@ -12,8 +12,8 @@ const DrinkCategory = () => {
 
     const { category } = useParams()
 
-    const { setDrink, data} = useContext(mainContext)
-    
+    const { setDrink, data } = useContext(mainContext)
+
     // const sendApi = async () => {
     //     if(category === 'random') {
     //         await setApi('https:www.thecocktaildb.com/api/json/v1/1/random.php')
@@ -31,11 +31,23 @@ const DrinkCategory = () => {
                 <NavBar />
                 <Header />
             </header>
-           
+
             <main>
                 {data.map((cocktail, index) => {
+                    let colorClass
+                    index % 6 == 0
+                        ? (colorClass = 'sixed')
+                        : index % 5 == 0
+                            ? (colorClass = 'fifth')
+                            : index % 4 == 0
+                                ? (colorClass = 'fourth')
+                                : index % 3 == 0
+                                    ? (colorClass = 'third')
+                                    : index % 2 == 0
+                                        ? (colorClass = 'second')
+                                        : (colorClass = 'first')
                     return (
-                        <div key={index} className='divCocktail'>
+                        <div key={index} className={`divCocktail ${colorClass}`}>
                             <Cocktail
                                 cocktailData={cocktail}
                             />

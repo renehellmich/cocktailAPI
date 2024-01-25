@@ -15,25 +15,25 @@
 }
 
 .first {
-
+    background: var(--color01)
 }
 
 .second {
-
+    background: var(--color02)
 }
 
 .third {
-
+    background: var(--color03)
 }
 
 .fourth {
-
+    background: var(--color04)
 }
 
 .fifth {
-
+    background: var(--color05)
 }
 
 .sixed {
-    
+    background: var(--color06)
 }
