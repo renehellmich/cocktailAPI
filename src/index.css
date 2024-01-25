@@ -3,3 +3,13 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+#root {
+  --color-blue-light: rgba(140, 194, 221, 1);
+  --color-purple: rgba(137, 129, 192, 1);
+  --color-red: rgba(213, 129, 129, 1);
+  --color-yellow: rgba(217, 182, 137, 1);
+  --color-blue: rgba(149, 167, 229, 1);
+  --color-green: rgba(155, 195, 164, 1);
+  --color-blue-dark: rgba(44, 47, 71, 1)
+}
