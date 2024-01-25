@@ -8,9 +8,9 @@
     color: white
 }
 
-.divCategoryCard:hover {
+/* .divCategoryCard:hover {
     font-size: 150%;
-}
+} */
 
 .divCategoryCard:nth-of-type(1) {
     background: var(--color-blue-light);

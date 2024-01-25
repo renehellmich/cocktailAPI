@@ -1,4 +1,16 @@
+header {
+    background: var(--color-accent);
+    color: white;
+    position: relative
+}
+
 main {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+}
+
+footer {
+    background: var(--color-accent);
+    color: white;
+    padding: 3rem 2rem;
 }

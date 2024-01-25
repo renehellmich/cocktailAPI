@@ -4,7 +4,8 @@
     justify-content: space-between;
     align-items: center;
     background-color: var(--color-accent);
-    padding: .5rem 1rem;
+    padding: 0 ;
+
 }
 
 .logo {
@@ -18,4 +19,9 @@ nav {
     font-family: var(--font-main);
     text-decoration: none;
     text-transform: uppercase;
+}
+
+a {
+    color: white;
+    text-decoration: none;
 }
