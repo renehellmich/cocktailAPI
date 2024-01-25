@@ -4,6 +4,8 @@ import Header from '../../components/header/Header'
 import Footer from '../../components/footer/Footer'
 import NavBar from '../../components/navBar/NavBar'
 import './landingpage.css'
+import { Link } from 'react-router-dom'
+import DrinkCategory from '../../components/drinkCategory/DrinkCategory'
 
 const LandingPage = () => {
 
@@ -14,30 +16,42 @@ const LandingPage = () => {
                 <Header />
             </header>
             <main>
-                <CategoryCard
-                    title={'Gin'}
-                    text={'Lorem ipsum dolor sit amet'}
-                />
-                <CategoryCard
-                    title={'Vodka'}
-                    text={'consectetur adipisicing elit'}
-                />
-                <CategoryCard
-                    title={'Rum'}
-                    text={'Omnis earum architecto'}
-                />
-                <CategoryCard
-                    title={'Scotch'}
-                    text={'blanditiis natus, itaque vero excepturi'}
-                />
-                <CategoryCard
-                    title={'Alkoholfrei'}
-                    text={'voluptatibus odio porro et'}
-                />
-                <CategoryCard
-                    title={'Zufall'}
-                    text={'Lorem ipsum dolor'}
-                />
+                <Link to={`/gin`}>
+                    <CategoryCard
+                        title={'Gin'}
+                        text={'Lorem ipsum dolor sit amet'}
+                    />
+                </Link>
+                <Link to={`/vodka`}>
+                    <CategoryCard
+                        title={'Vodka'}
+                        text={'consectetur adipisicing elit'}
+                    />
+                </Link>
+                <Link to={`/rum`}>
+                    <CategoryCard
+                        title={'Rum'}
+                        text={'Omnis earum architecto'}
+                    />
+                </Link>
+                <Link to={`/scotch`}>
+                    <CategoryCard
+                        title={'Scotch'}
+                        text={'blanditiis natus, itaque vero excepturi'}
+                    />
+                </Link>
+                <Link to={`/free`}>
+                    <CategoryCard
+                        title={'Alkoholfrei'}
+                        text={'voluptatibus odio porro et'}
+                    />
+                </Link>
+                <Link to={`/random`}>
+                    <CategoryCard
+                        title={'Zufall'}
+                        text={'Lorem ipsum dolor'}
+                    />
+                </Link>
             </main>
             <footer>
                 <Footer />

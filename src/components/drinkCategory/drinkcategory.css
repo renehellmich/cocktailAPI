@@ -1,0 +1,15 @@
+.divCocktail {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem;
+}
+
+.divCocktail img {
+    width: 30vw;
+}
+
+.divCocktail h2 {
+    transform: rotateZ(-90deg);
+}
