@@ -8,16 +8,21 @@ const MainProvider = ({ children }) => {
     const [drink, setDrink] = useState('')
     const [data, setData] = useState(null)
     const [api, setApi] = useState('')
-
-    // let api = `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${drink}`
-
+    
     useEffect(() => {
+
+        if(drink === 'random') {
+            setApi('https:www.thecocktaildb.com/api/json/v1/1/random.php')
+        } else {
+            setApi(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${drink}`)
+        }
+
         const apiFetch = async () => {
             const resp = await axios.get(api)
             setData(resp.data.drinks)
         }
         apiFetch()
-    }, [drink])
+    }, [drink, api])
 
     console.log(data);
     return (

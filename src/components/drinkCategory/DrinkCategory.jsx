@@ -10,16 +10,18 @@ const DrinkCategory = () => {
 
     const { category } = useParams()
 
-    const { setDrink, data, setApi, api } = useContext(mainContext)
+    const { setDrink, data} = useContext(mainContext)
     
-    if(category == 'random') {
-        setApi('https:www.thecocktaildb.com/api/json/v1/1/random.php')
-    } else {
-        setApi(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${category}`)
-    }
+    // const sendApi = async () => {
+    //     if(category === 'random') {
+    //         await setApi('https:www.thecocktaildb.com/api/json/v1/1/random.php')
+    //     } else {
+    //         await setApi(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${category}`)
+    //     }
+    // }
     setDrink(category)
 
-    console.log(api);
+    // console.log(api);
 
     return (
         <>
