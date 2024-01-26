@@ -3,10 +3,12 @@ import { useContext, useEffect, useState } from "react";
 import { mainContext } from '../../context/mainProvider'
 import './cocktailDetails.css'
 
-const CocktailDetails = () => {
 
-    const { idDrink } = useParams();
-    console.log("hier ist id", idDrink);
+const CocktailDetails = ({ idDrinktoGibWeiter }) => {
+
+
+    // const { idDrink } = useParams();
+    // console.log("hier ist id", idDrink);
 
     const { state, setState } = useContext(mainContext)
 
@@ -14,9 +16,9 @@ const CocktailDetails = () => {
     useEffect(() => {
         setState((prevState) => ({
             ...prevState,
-            drinkID: idDrink
+            drinkID: idDrinktoGibWeiter
         }))
-    }, [idDrink, setState])
+    }, [idDrinktoGibWeiter, setState])
 
 
     return (<>
@@ -45,6 +47,7 @@ const CocktailDetails = () => {
 
 
                     </div>
+
                 </>
             )
 
