@@ -16,9 +16,11 @@ const MainProvider = ({ children }) => {
     const [state, setState] = useState({
         drink: '',
         data: [],
-        backupData: [],
+        detailData: [],
         api: '',
-        searchValue: ''
+        apiDetail: '',
+        searchValue: '',
+        drinkID: ''
     })
 
     useEffect(() => {
@@ -58,6 +60,28 @@ const MainProvider = ({ children }) => {
         } else {null}
 
     }, [state.searchValue])
+
+    useEffect(() => {
+        if(state.drinkID) {
+            setState((prevState) => ({
+                ...prevState,
+                apiDetail: `https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${state.drinkID}`
+            }))
+        }
+    }, [state.drinkID])
+
+    useEffect(() => {
+        const apiFetch = async () => {
+            // console.log(state.api);
+            const resp = await axios.get(state.apiDetail)
+            setState((prevState) => ({
+                ...prevState,
+                detailData: resp.data.drinks
+            }))
+        }
+        state.apiDetail ? (apiFetch()) : (null)
+
+    }, [state.apiDetail])
 
     return (
         <>
