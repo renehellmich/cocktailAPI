@@ -33,38 +33,38 @@ const DrinkCategory = () => {
             <main>
                 {
                     state.data ?
-                    (
-                        <>
-                        {state.data.map((cocktail, index) => {
-                            let colorClass
-                            index % 6 == 0
-                                ? (colorClass = 'sixed')
-                                : index % 5 == 0
-                                    ? (colorClass = 'fifth')
-                                    : index % 4 == 0
-                                        ? (colorClass = 'fourth')
-                                        : index % 3 == 0
-                                            ? (colorClass = 'third')
-                                            : index % 2 == 0
-                                                ? (colorClass = 'second')
-                                                : (colorClass = 'first')
-                            return (
-                                <div key={index} className={`divCocktail ${colorClass}`}>
-                                    <Cocktail
-                                        cocktailData={cocktail}
-                                    />
-                                </div>
-                            )
-                        })
-                        }
-                        </>
-                    )
-                    :(<p>Loading....</p>)
+                        (
+                            <>
+                                {state.data.map((cocktail, index) => {
+                                    let colorClass
+                                    index % 6 == 0
+                                        ? (colorClass = 'sixed')
+                                        : index % 5 == 0
+                                            ? (colorClass = 'fifth')
+                                            : index % 4 == 0
+                                                ? (colorClass = 'fourth')
+                                                : index % 3 == 0
+                                                    ? (colorClass = 'third')
+                                                    : index % 2 == 0
+                                                        ? (colorClass = 'second')
+                                                        : (colorClass = 'first')
+                                    return (
+                                        <div key={index} className={`divCocktail ${colorClass}`}>
+                                            <Cocktail
+                                                cocktailData={cocktail}
+                                            />
+                                        </div>
+                                    )
+                                })
+                                }
+                            </>
+                        )
+                        : (<p>Loading....</p>)
                 }
             </main>
-            <footer>
-                <Footer />
-            </footer>
+
+            <Footer />
+
         </>
     )
 }

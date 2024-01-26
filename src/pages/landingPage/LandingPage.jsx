@@ -53,9 +53,9 @@ const LandingPage = () => {
                     />
                 </Link>
             </main>
-            <footer>
-                <Footer />
-            </footer>
+            {/* <footer> das habe ich direct in der componente zinzugefügt */}
+            <Footer />
+            {/* </footer> */}
         </>
     )
 }

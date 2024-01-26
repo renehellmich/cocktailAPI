@@ -1,0 +1,26 @@
+footer {
+    background: var(--color-accent);
+    color: white;
+    padding: 0 3rem;
+    padding-top: 5rem;
+    padding-bottom: 3rem;
+}
+
+footer h4 {
+    font-family: var(--font-secondary);
+    color: var(--color-light);
+    font-size: 1.8rem;
+    font-weight: 700;
+    line-height: 165%;
+    letter-spacing: 0.4px;
+    margin-bottom: 3rem;
+}
+
+
+footer .footerInfo {
+    color: var(--color-light);
+    font-family: var(--font-main);
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 165%;
+}

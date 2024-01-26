@@ -1,0 +1,5 @@
+.cocktailDetail {
+    background-color: var(--color-accent);
+    padding: 4rem;
+    color: var(--color-light);
+}
