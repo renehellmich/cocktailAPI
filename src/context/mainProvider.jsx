@@ -22,61 +22,43 @@ const MainProvider = ({ children }) => {
     })
 
     useEffect(() => {
-
-        console.log(state.drink);
         if (state.drink == 'random') {
             setState((prevState) => ({
                 ...prevState,
                 api: 'https://www.thecocktaildb.com/api/json/v1/1/random.php'
             }))
         } else {
-            console.log('Drink:', state.drink);
             setState((prevState) => ({
                 ...prevState,
                 api: `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${state.drink}`
             }))
-            console.log('API', state.api);
         }
-        const getAPI = async (api) => {
-            const resp = await axios.get(state.api)
-            console.log(resp.data);
-        }
-        getAPI()
-        
+
+    }, [state.drink])
+
+    useEffect(() => {
         const apiFetch = async () => {
+            // console.log(state.api);
             const resp = await axios.get(state.api)
-            // console.log('Api', state.api)
-            // console.log('Zeile 44', resp)
             setState((prevState) => ({
                 ...prevState,
                 data: resp.data.drinks
             }))
         }
-        apiFetch()
-        console.log('State im useEffect', state);
-    }, [state.drink])
+        state.api ? (apiFetch()) : (null)
 
-    state.searchValue ? (<>{
+    }, [state.api])
 
-        useEffect(() => {
-
+    useEffect(() => {
+        if(state.searchValue) {
             setState((prevState) => ({
                 ...prevState,
                 api: `https://www.thecocktaildb.com/api/json/v1/1/search.php?f=${state.searchValue}`
             }))
+        } else {null}
 
-            const apiFetch = async () => {
-                const resp = await axios.get(state.api)
-                setState((prevState) => ({
-                    ...prevState,
-                    data: resp.data.drinks
-                }))
-            }
-            apiFetch()
-        }, [state.searchValue])
-    }</>) : (null)
+    }, [state.searchValue])
 
-    console.log('State: ', state);
     return (
         <>
             <mainContext.Provider value={{ state, setState }}>

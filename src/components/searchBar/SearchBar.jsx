@@ -3,23 +3,21 @@ import { mainContext } from '../../context/mainProvider'
 
 const SearchBar = () => {
 
-    const { state, setState} = useContext(mainContext)
+    const { state, setState } = useContext(mainContext)
     const searchRef = useRef()
 
-    
     const getSearchValue = () => {
-        console.log(searchRef);
+        console.log(searchRef.current.value.toLowerCase().charAt(0));
         setState((prevState) => ({
             ...prevState,
-            searchValue: searchRef.current.value
+            searchValue: searchRef.current.value.toLowerCase().charAt(0)
         }))
-        console.log(state);
+        // console.log(state);
     }
 
     return (
         <>
-
-            <input 
+            <input
                 type="text"
                 ref={searchRef}
             />
