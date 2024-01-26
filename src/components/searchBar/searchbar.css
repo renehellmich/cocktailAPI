@@ -1,0 +1,16 @@
+.scSearchBar {
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+
+.scSearchBar input {
+    font-size: 1rem;
+    padding: .5rem 1rem;
+}
+
+.scSearchBar button {
+    font-size: 1rem;
+    padding: .5rem 2rem;
+}

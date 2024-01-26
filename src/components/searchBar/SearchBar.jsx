@@ -1,5 +1,6 @@
 import React, { useContext, useRef } from 'react'
 import { mainContext } from '../../context/mainProvider'
+import './searchbar.css'
 
 const SearchBar = () => {
 
@@ -15,12 +16,13 @@ const SearchBar = () => {
 
     return (
         <>
-            <input
-                type="text"
-                ref={searchRef}
-            />
-            <button onClick={getSearchValue}>Search</button>
-
+            <section className='scSearchBar'>
+                <input
+                    type="text"
+                    ref={searchRef}
+                />
+                <button onClick={getSearchValue}>Search</button>
+            </section>
         </>
     )
 }

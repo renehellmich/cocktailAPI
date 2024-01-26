@@ -8,8 +8,8 @@ const Cocktail = ({ cocktailData }) => {
         <>
             <Link to={`/drink/${cocktailData.idDrink}`} >
                 <img src={cocktailData.strDrinkThumb} alt="" />
-                <h2>{cocktailData.strDrink}</h2>
             </Link >
+                <h2>{cocktailData.strDrink}</h2>
         </>
     )
 

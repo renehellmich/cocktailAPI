@@ -6,8 +6,6 @@ import Header from '../header/Header'
 import './drinkcategory.css'
 import NavBar from '../navBar/NavBar'
 import Footer from '../footer/Footer'
-import SearchBar from '../searchBar/SearchBar'
-
 
 const DrinkCategory = () => {
 
@@ -27,7 +25,6 @@ const DrinkCategory = () => {
             <header>
                 <NavBar />
                 <Header />
-                <SearchBar />
             </header>
 
             <main>
