@@ -47,3 +47,6 @@ h6 {
     font-family: var(--font-secondary);
 }
 
+body {
+  background: var(--color-accent);
+}
