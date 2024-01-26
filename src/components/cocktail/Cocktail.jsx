@@ -3,10 +3,10 @@ import React from 'react'
 import { Link } from 'react-router-dom';
 
 const Cocktail = ({ cocktailData }) => {
-    // console.log(cocktailData.strDrink);
+    console.log(cocktailData);
     return (
         <>
-            <Link to={`/drink/${cocktailData.strDrink}`} >
+            <Link to={`/drink/${cocktailData.idDrink}`} >
                 <img src={cocktailData.strDrinkThumb} alt="" />
                 <h2>{cocktailData.strDrink}</h2>
             </Link >
