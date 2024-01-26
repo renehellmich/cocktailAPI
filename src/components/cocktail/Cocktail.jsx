@@ -16,8 +16,8 @@ const Cocktail = ({ cocktailData }) => {
 
     return (
         <>
-            <div className="button" onClick={() => setModal(true)}> <img src={cocktailData.strDrinkThumb} alt={cocktailData.strDrink} />
-                <h2>{cocktailData.strDrink}</h2></div>
+            <img src={cocktailData.strDrinkThumb} alt={cocktailData.strDrink} onClick={() => setModal(true)} />
+            <h2 onClick={() => setModal(true)}>{cocktailData.strDrink}</h2>
 
             {/* das war vorher
             <Link to={`/drink/${cocktailData.idDrink}`} >
