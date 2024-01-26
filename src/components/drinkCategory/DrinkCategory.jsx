@@ -14,7 +14,7 @@ const DrinkCategory = () => {
     const { category } = useParams()
     const { state, setState } = useContext(mainContext)
 
-    console.log(category);
+    // console.log(category,state.drink);
     useEffect(() => {
         setState((prevState) => ({
             ...prevState,

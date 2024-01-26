@@ -23,6 +23,7 @@ const MainProvider = ({ children }) => {
 
     useEffect(() => {
 
+        console.log(state.drink);
         if (state.drink == 'random') {
             setState((prevState) => ({
                 ...prevState,
@@ -36,11 +37,16 @@ const MainProvider = ({ children }) => {
             }))
             console.log('API', state.api);
         }
-
+        const getAPI = async (api) => {
+            const resp = await axios.get(state.api)
+            console.log(resp.data);
+        }
+        getAPI()
+        
         const apiFetch = async () => {
             const resp = await axios.get(state.api)
-            console.log('Api', state.api)
-            console.log('Zeile 44', resp)
+            // console.log('Api', state.api)
+            // console.log('Zeile 44', resp)
             setState((prevState) => ({
                 ...prevState,
                 data: resp.data.drinks
