@@ -3,3 +3,7 @@
     padding: 4rem;
     color: var(--color-light);
 }
+
+.cocktailDetail img {
+    width: 50%;
+}

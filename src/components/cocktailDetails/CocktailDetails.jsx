@@ -5,38 +5,57 @@ import './cocktailDetails.css'
 
 const CocktailDetails = () => {
 
-    const { title } = useParams();
-    console.log("hier ist title", title);
+    const { idDrink } = useParams();
+    console.log("hier ist id", idDrink);
+
+    const { state, setState } = useContext(mainContext)
 
 
-    const { drink, setDrink, data } = useContext(mainContext)
-
-    // useEffect(() => {
-    //     const filterdCocktail = data.filter((cocktail) => {
-    //         return cocktail.strDrink === title.toString()
-
-    //     })
-    //     setData(filterdCocktail)
-    // }, [drink])
-
-    // console.log(filterdCocktail);
-
+    useEffect(() => {
+        setState((prevState) => ({
+            ...prevState,
+            drinkID: idDrink
+        }))
+    }, [idDrink, setState])
 
 
     return (<>
-        <div className="cocktailDetail">
-            <p>hei heir ist die seite</p>
-            <p>{title}</p>
 
-            {/* {drink
-            ? (
-                <><img src={filterdCocktail.strDrinkThumb} alt="" />
-                    <h2>{filterdCocktail.strDrink}</h2></>)
+
+        {state.detailData ?
+            (
+                <>
+                    <div className="cocktailDetail">
+                        <div className="image">
+                            <img src={state?.detailData[0]?.strDrinkThumb} alt="drink" />
+                        </div>
+                        <div className="details">
+                            <h3>{state?.detailData[0]?.strDrink}</h3>
+                            <h4>Ingredients:</h4>
+                            <ul>{Array.from({ length: 15 }, (_, i) => (
+
+                                state?.detailData[0]?.[`strIngredient${i + 1}`]
+                                    ?
+                                    <li key={i}>{state?.detailData[0]?.[`strIngredient${i + 1}`]}</li> : null
+                            ))}</ul>
+                            <p>{state?.detailData[0]?.strInstructionsDE}</p>
+
+
+                        </div>
+
+
+                    </div>
+                </>
+            )
+
             : (<p>...loading</p>)
-        } */}
 
 
-        </div>
+        }
+
+
+
+
     </>);
 }
 
