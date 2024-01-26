@@ -7,12 +7,10 @@ const SearchBar = () => {
     const searchRef = useRef()
 
     const getSearchValue = () => {
-        console.log(searchRef.current.value.toLowerCase().charAt(0));
         setState((prevState) => ({
             ...prevState,
             searchValue: searchRef.current.value.toLowerCase().charAt(0)
         }))
-        // console.log(state);
     }
 
     return (
