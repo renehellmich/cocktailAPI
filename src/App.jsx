@@ -1,5 +1,6 @@
 import { useParams } from 'react-router-dom'
 import { Routes, Route } from 'react-router-dom'
+// import './mobile.css'
 import './App.css'
 import LandingPage from './pages/landingPage/LandingPage'
 import DrinkCategory from './components/drinkCategory/DrinkCategory'

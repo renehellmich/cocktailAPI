@@ -1,17 +1,34 @@
 .divCocktail {
-    display: flex;
+    /* display: flex;
     flex-direction: row;
+    justify-content: space-between;
+    align-items: center; */
+    display: grid;
+    /* grid-template-columns: 80% 20%; */
     justify-content: space-between;
     align-items: center;
     padding: 2rem;
 }
 
+.divCocktail:nth-of-type(odd) {
+    grid-template-areas: "img head";
+}
+
+.divCocktail:nth-of-type(even) {
+    grid-template-areas: "head img";
+}
+
 .divCocktail img {
     width: 30vw;
+    grid-column: 80%;
+    grid-area: img;
 }
 
 .divCocktail h2 {
-    transform: rotateZ(-90deg);
+    writing-mode: vertical-rl;
+    color: white;
+    grid-column: 20%;
+    grid-area: head;
 }
 
 .first {
@@ -36,4 +53,14 @@
 
 .sixed {
     background: var(--color06)
+}
+
+@media screen and (min-width:320px) and (max-width: 760px) {
+    .divCocktail {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 2rem;
+    }
 }

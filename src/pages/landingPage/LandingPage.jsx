@@ -4,6 +4,7 @@ import Header from '../../components/header/Header'
 import Footer from '../../components/footer/Footer'
 import NavBar from '../../components/navBar/NavBar'
 import './landingpage.css'
+import '../../mobile.css'
 import { Link } from 'react-router-dom'
 import DrinkCategory from '../../components/drinkCategory/DrinkCategory'
 

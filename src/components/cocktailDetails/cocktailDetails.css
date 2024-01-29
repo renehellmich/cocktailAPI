@@ -42,3 +42,16 @@ ul {
     padding: .5rem;
     list-style: none;
 }
+
+@media screen and (min-width:320px) and (max-width: 760px)
+{
+    .cocktailDetail {
+        background-color: var(--color-accent);
+        padding: 1rem;
+        color: var(--color-light);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+    }
+}
